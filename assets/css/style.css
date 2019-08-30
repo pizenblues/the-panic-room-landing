@@ -11,7 +11,16 @@ body {
     margin-left: auto;
     margin-right: auto;
 }
-
+/*
+h1{
+    text-shadow:
+       0px 0px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;
+}
+*/
 
 /* buttons */
 .btn-custom{
@@ -85,38 +94,25 @@ input:focus, textarea:focus { border-color: #9b4dca; outline: none }
 
 
 /* main section */
-.hero{ background: rgb(24, 24, 26) }
-.hero-text{ color: rgb(153, 153, 153) }
-.hero-imagen{
-    /* max-height: 450px;
-    width: auto; */
-    height: auto;
-    width: 100%;
-}
-.hero-interaction{
-    /* top: 270px;
-    left: 80px; */
-    position: absolute;
-    top: 60%;
-    left: 20%;
-    /* width: 100px; */
-    width: 20%;
-}
-.hero-animation{
-    /* max-height: 100px;
-    width: auto */
-    height: auto;
-}
-.bounce{
-    display:block;
-    animation: 4s infinite alternate floating
-}
-@keyframes floating {
-	0% { transform: translatey(0px) }
-	50% { transform: translatey(-5px) }
-	100% { transform: translatey(0px) }
+.hero{
+    position: relative;
+    top: 5%;
+    left: 2%;
 }
 
+.hero-imagen{
+    height: 100vh;
+    width: auto;
+    background-image: url('../images/bg.png');
+    background-position: bottom right;
+    background-repeat: no-repeat;
+    background-size: auto 90%;
+}
+
+.hero-text{
+    color: rgb(153, 153, 153);
+    /*background-color: rgb(0, 0, 0);*/
+}
 
 /* navbar */
 .navbar-toggler {border-color: rgb(255, 255, 255) }
@@ -133,27 +129,54 @@ input:focus, textarea:focus { border-color: #9b4dca; outline: none }
 .card{ background: rgb(24, 24, 26); text-align: center }
 .card-title{ color: #9b4dca }
 
-
-/* media queries */
-@media only screen and (max-width: 992px) {
-  /* .hero-imagen{
-        width: 100%;
-        height: auto;
-    } */
-    /* .hero-animation{
-        max-height: 80px;
-    } */
-}
-
-/* @media only screen and (max-width: 768px) {
-    .hero-animation{
-        max-height: 100px;
+@media only screen and (max-width: 1194px){
+    .hero-imagen{
+        background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.733), transparent), url('../images/bg.png'); 
     }
 }
 
-@media only screen and (max-width: 576px) {
-    .hero-animation{
-        max-height: 40px;
+@media only screen and (max-width: 768px){
+    .hero{
+        top: 0%;
     }
-} */
 
+    .hero-imagen{
+        height: 125vh;
+        width: auto;
+        background-repeat: no-repeat;
+        background-image: url('../images/bg-mobile.png');
+        background-position: bottom center;
+        background-size: 100% auto;
+    }
+}
+
+@media only screen and (max-width: 620px){
+    .hero-imagen{
+        height: 110vh;
+        background-size: contain;
+    }
+}
+/*
+@media only screen and (max-width: 425px){
+    .hero{
+        position: initial;
+    }
+    .hero-imagen{
+        height: 110vh;
+        background-size: contain;
+    }
+}
+*/
+/*
+@media only screen and (max-width: 375px){
+*/
+@media only screen and (max-width: 425px){
+    .hero-imagen{
+        height: 100vh;
+        width: auto;
+        background: linear-gradient(#000, rgba(0, 0, 0, 0.897), transparent), url('../images/bg-mobile.png') no-repeat center; 
+        /*background-repeat: no-repeat;
+        background-position: center center;*/
+        background-size: auto auto;
+    }
+}
